@@ -53,6 +53,8 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MYSQL_CLIENT_SSL_CA_FILE="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:/opt/bitnami/prestashop/bin:$PATH"
 EXPOSE 8080 8443
-USER 1001
+RUN chmod +x /opt/bitnami/scripts/prestashop/entrypoint.sh
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
+RUN chmod +x /opt/bitnami/scripts/apache/run.sh
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
+USER 1001
