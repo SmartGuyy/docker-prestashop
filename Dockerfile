@@ -57,3 +57,4 @@ RUN chmod +x /opt/bitnami/scripts/prestashop/entrypoint.sh
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
 RUN chmod +x /opt/bitnami/scripts/apache/run.sh
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
+USER 1001
