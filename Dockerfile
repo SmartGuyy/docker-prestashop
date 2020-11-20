@@ -55,5 +55,6 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
 EXPOSE 8080 8443
 RUN chmod +x /opt/bitnami/scripts/prestashop/entrypoint.sh
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
-USER 1001
+RUN chmod +x /opt/bitnami/scripts/apache/run.sh
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
+USER 1001
