@@ -1,0 +1,51 @@
+{
+    "apache": {
+        "arch": "amd64",
+        "digest": "07991412bb24fc8493228f4bd67b28a77e011242971dcdd687a5d2113ac89bc9",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "2.4.46-3"
+    },
+    "gosu": {
+        "arch": "amd64",
+        "digest": "4d858ac600c38af8de454c27b7f65c0074ec3069880cb16d259a6e40a46bbc50",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "1.12.0-2"
+    },
+    "libphp": {
+        "arch": "amd64",
+        "digest": "38466eb6522a8dd07cf2abbbab6a13db6ce60dd96a556635900e60338999fe9b",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "7.2.34-1"
+    },
+    "mysql-client": {
+        "arch": "amd64",
+        "digest": "dc105b313dff78fca99abe1d8dec079b6e0a3e7e3bca0da1ab0ff08da8ec330c",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "10.2.36-0"
+    },
+    "php": {
+        "arch": "amd64",
+        "digest": "f4c74f0f414f620d17b052c099ebbc9a94216999556e0b204d970885fad3bde0",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "7.2.34-7"
+    },
+    "prestashop": {
+        "arch": "amd64",
+        "digest": "8d89d079f468f9b21f3ad7e31e7192268a2f555b77295af7a448a60ac44f5598",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "1.7.6-9-0"
+    },
+    "render-template": {
+        "arch": "amd64",
+        "digest": "8179ad1371c9a7d897fe3b1bf53bbe763f94edafef19acad2498dd48b3674efe",
+        "distro": "debian-10",
+        "type": "NAMI",
+        "version": "1.0.0-3"
+    }
+}
