@@ -25,11 +25,15 @@ RUN apt-get update && apt-get upgrade -y && \
 RUN chmod g+rwX /opt/bitnami
 
 COPY rootfs /
-RUN chmod +x /opt/bitnami/scripts/*
+RUN chmod +x /opt/bitnami/scripts/mysql-client/postunpack.sh
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
+RUN chmod +x /opt/bitnami/scripts/php/postunpack.sh
 RUN /opt/bitnami/scripts/php/postunpack.sh
+RUN chmod +x /opt/bitnami/scripts/apache/postunpack.sh
 RUN /opt/bitnami/scripts/apache/postunpack.sh
+RUN chmod +x /opt/bitnami/scripts/apache-modphp/postunpack.sh
 RUN /opt/bitnami/scripts/apache-modphp/postunpack.sh
+RUN chmod +x /opt/bitnami/scripts/prestashop/postunpack.sh
 RUN /opt/bitnami/scripts/prestashop/postunpack.sh
 ENV ALLOW_EMPTY_PASSWORD="no" \
     APACHE_ENABLE_CUSTOM_PORTS="no" \
