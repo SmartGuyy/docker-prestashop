@@ -58,7 +58,7 @@ RUN chmod a+x /opt/bitnami/scripts/apache/setup.sh
 RUN chmod a+x /opt/bitnami/scripts/php/setup.sh
 RUN chmod a+x /opt/bitnami/scripts/mysql-client/setup.sh
 RUN chmod a+x /opt/bitnami/scripts/prestashop/setup.sh
-RUN chmod 202 -R /opt/bitnami/prestashop
+RUN chmod 707 -R /opt/bitnami/prestashop
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
 USER 1001
