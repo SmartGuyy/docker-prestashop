@@ -56,6 +56,7 @@ EXPOSE 8080 8443
 RUN chmod a+x /opt/bitnami/scripts/prestashop/entrypoint.sh
 RUN chmod a+x /opt/bitnami/scripts/apache/setup.sh
 RUN chmod a+x /opt/bitnami/scripts/php/setup.sh
+RUN chmod a+x /opt/bitnami/scripts/mysql-client/setup.sh:
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
 USER 1001
