@@ -54,6 +54,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:/opt/bitnami/prestashop/bin:$PATH"
 EXPOSE 8080 8443
 RUN chmod a+x /opt/bitnami/scripts/prestashop/entrypoint.sh
+RUN chmod a+x /opt/bitnami/scripts/apache/setup.sh
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
 USER 1001
