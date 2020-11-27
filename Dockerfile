@@ -53,7 +53,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MYSQL_CLIENT_SSL_CA_FILE="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:/opt/bitnami/prestashop/bin:$PATH"
     
-RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /bitnami/prestashop/1.7.6.9.zip
+RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /bitnami/prestashop/ -O 1.7.6.9.zip
 RUN unzip /bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/bitnami/prestashop/test"
 RUN unzip /bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/bitnami/prestashop/test"
 RUN mv /bitnami/prestashop/test/PrestaShop-1.7.6.9/* /bitnami/prestashop/
