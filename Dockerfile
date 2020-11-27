@@ -53,12 +53,12 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MYSQL_CLIENT_SSL_CA_FILE="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:/opt/bitnami/prestashop/bin:$PATH"
     
-RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /bitnami/prestashop/ -O 1.7.6.9.zip
-RUN unzip /bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/bitnami/prestashop/test"
-RUN unzip /bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/bitnami/prestashop/test"
-RUN mv /bitnami/prestashop/test/PrestaShop-1.7.6.9/* /bitnami/prestashop/
-RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/develop/composer.json -P /bitnami/prestashop/
-RUN composer install -d /bitnami/prestashop/
+RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /opt/bitnami/prestashop/ -O 1.7.6.9.zip
+RUN unzip /opt/bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/opt/bitnami/prestashop/test"
+RUN unzip /opt/bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/opt/bitnami/prestashop/test"
+RUN mv /opt/bitnami/prestashop/test/PrestaShop-1.7.6.9/* /opt/bitnami/prestashop/
+RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/develop/composer.json -P /opt/bitnami/prestashop/
+RUN composer install -d /opt/bitnami/prestashop/
 RUN php -d date.timezone=UTC ./vendor/bin/phpunit -c tests/Unit/phpunit.xml --log-junit results.xml    
 
 EXPOSE 8080 8443
