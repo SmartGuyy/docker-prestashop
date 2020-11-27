@@ -55,6 +55,7 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     
 RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /bitnami/prestashop/
 RUN mv /bitnami/prestashop/1.7.6.9 /bitnami/prestashop/1.7.6.9.zip
+RUN ls /bitnami/prestashop/
 RUN unzip 1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/bitnami/prestashop/test"
 RUN unzip 1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/bitnami/prestashop/test"
 RUN mv /bitnami/prestashop/test/PrestaShop-1.7.6.9/* /bitnami/prestashop/
