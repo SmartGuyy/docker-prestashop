@@ -52,6 +52,15 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
     MYSQL_CLIENT_ENABLE_SSL="no" \
     MYSQL_CLIENT_SSL_CA_FILE="" \
     PATH="/opt/bitnami/php/bin:/opt/bitnami/php/sbin:/opt/bitnami/apache/bin:/opt/bitnami/mysql/bin:/opt/bitnami/common/bin:/opt/bitnami/prestashop/bin:$PATH"
+    
+RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -P /bitnami/prestashop/
+RUN unzip 1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/bitnami/prestashop/test"
+RUN unzip 1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/bitnami/prestashop/test"
+RUN mv /bitnami/prestashop/test/PrestaShop-1.7.6.9/* /bitnami/prestashop/
+RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/develop/composer.json -P /bitnami/prestashop/
+RUN composer install -d /bitnami/prestashop/
+RUN php -d date.timezone=UTC ./vendor/bin/phpunit -c tests/Unit/phpunit.xml --log-junit results.xml    
+
 EXPOSE 8080 8443
 RUN chmod a+x /opt/bitnami/scripts/prestashop/entrypoint.sh
 RUN chmod a+x /opt/bitnami/scripts/apache/setup.sh
