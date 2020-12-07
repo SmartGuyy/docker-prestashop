@@ -139,8 +139,8 @@
             "PrestaShop\\PrestaShop\\": "src/",
             "PrestaShopBundle\\": "src/PrestaShopBundle/"
         },
-        "classmap": ["app/AppKernel.php", "app/AppCache.php"]
-        "exclude-from-classmap": ["/vendor/"]
+        "classmap": ["app/AppKernel.php", "app/AppCache.php"],
+        "exclude-from-classmap": ["vendor/"]
     },
     "scripts": {
         "post-install-cmd": [
