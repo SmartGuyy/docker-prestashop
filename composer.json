@@ -139,7 +139,7 @@
             "PrestaShop\\PrestaShop\\": "src/",
             "PrestaShopBundle\\": "src/PrestaShopBundle/"
         },
-        "classmap": ["app/AppKernel.php", "app/AppCache.php"],
+        "classmap": ["app/AppKernel.php", "app/AppCache.php"]
     },
     "scripts": {
         "post-install-cmd": [
