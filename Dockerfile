@@ -59,7 +59,7 @@ RUN unzip /opt/bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*
 RUN mv /opt/bitnami/prestashop/test/PrestaShop-1.7.6.9/* /opt/bitnami/prestashop/
 RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/develop/composer.json -P /opt/bitnami/prestashop/
 RUN composer install -d /opt/bitnami/prestashop/
-RUN php -d date.timezone=UTC ./opt/bitnami/prestashop/vendor/bin/phpunit -c /opt/bitnami/prestashop/tests/Unit/phpunit.xml --log-junit /opt/bitnami/prestashop/results.xml  
+RUN php -d date.timezone=UTC ./opt/bitnami/prestashop/vendor/bin/phpunit -c /opt/bitnami/prestashop/tests/Unit/phpunit.xml --log-junit /opt/bitnami/prestashop/results.xml | set +e 
 
 EXPOSE 8080 8443
 RUN chmod a+x /opt/bitnami/scripts/prestashop/entrypoint.sh
