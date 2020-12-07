@@ -57,7 +57,7 @@ RUN wget https://codeload.github.com/PrestaShop/PrestaShop/zip/1.7.6.9 -O /opt/b
 RUN unzip /opt/bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests/*" -d "/opt/bitnami/prestashop/test"
 RUN unzip /opt/bitnami/prestashop/1.7.6.9.zip "PrestaShop-1.7.6.9/tests-legacy/*" -d "/opt/bitnami/prestashop/test"
 RUN mv /opt/bitnami/prestashop/test/PrestaShop-1.7.6.9/* /opt/bitnami/prestashop/
-RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/develop/composer.json -P /opt/bitnami/prestashop/
+RUN wget https://raw.githubusercontent.com/PrestaShop/PrestaShop/1.7.6.9/composer.json -P /opt/bitnami/prestashop/
 RUN composer install -d /opt/bitnami/prestashop/
 RUN php -d date.timezone=UTC ./opt/bitnami/prestashop/vendor/bin/phpunit -c /opt/bitnami/prestashop/tests/Unit/phpunit.xml --log-junit /opt/bitnami/prestashop/results.xml | set +e 
 
