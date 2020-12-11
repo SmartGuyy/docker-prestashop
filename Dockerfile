@@ -25,15 +25,11 @@ RUN apt-get update && apt-get upgrade -y && \
 RUN chmod g+rwX /opt/bitnami
 
 COPY rootfs /
-RUN chmod +x /opt/bitnami/scripts/mysql-client/postunpack.sh
+RUN chmod 775 -R /opt/bitnami
 RUN /opt/bitnami/scripts/mysql-client/postunpack.sh
-RUN chmod +x /opt/bitnami/scripts/php/postunpack.sh
 RUN /opt/bitnami/scripts/php/postunpack.sh
-RUN chmod +x /opt/bitnami/scripts/apache/postunpack.sh
 RUN /opt/bitnami/scripts/apache/postunpack.sh
-RUN chmod +x /opt/bitnami/scripts/apache-modphp/postunpack.sh
 RUN /opt/bitnami/scripts/apache-modphp/postunpack.sh
-RUN chmod +x /opt/bitnami/scripts/prestashop/postunpack.sh
 RUN /opt/bitnami/scripts/prestashop/postunpack.sh
 ENV ALLOW_EMPTY_PASSWORD="no" \
     APACHE_ENABLE_CUSTOM_PORTS="no" \
@@ -62,12 +58,6 @@ RUN composer install -d /opt/bitnami/prestashop/
 RUN php -d date.timezone=UTC ./opt/bitnami/prestashop/vendor/bin/phpunit -c /opt/bitnami/prestashop/tests/Unit/phpunit.xml --log-junit /opt/bitnami/prestashop/results.xml ; exit 0
 
 EXPOSE 8080 8443
-RUN chmod a+x /opt/bitnami/scripts/prestashop/entrypoint.sh
-RUN chmod a+x /opt/bitnami/scripts/apache/setup.sh
-RUN chmod a+x /opt/bitnami/scripts/php/setup.sh
-RUN chmod a+x /opt/bitnami/scripts/mysql-client/setup.sh
-RUN chmod a+x /opt/bitnami/scripts/prestashop/setup.sh
-RUN chmod 777 -R /opt/bitnami
 RUN chmod a+x /post-init.sh
 ENTRYPOINT [ "/opt/bitnami/scripts/prestashop/entrypoint.sh" ]
 CMD [ "/opt/bitnami/scripts/apache/run.sh" ]
